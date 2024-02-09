@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "author": "Gamze Akçay",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-mini", "id": "bb1", "top": -1.4, "left": 26.4, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 135, "left": 229.8, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -86.1,
+      "left": 100.2,
+      "attrs": { "temperature": "45.1", "humidity": "15" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -133.7,
+      "left": 448.67,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "dht1:VCC", "uno:5V", "yellow", [ "v0" ] ],
+    [ "dht1:SDA", "uno:2", "green", [ "v0" ] ],
+    [ "dht1:GND", "uno:GND.3", "black", [ "v0" ] ],
+    [ "lcd1:GND", "uno:GND.3", "black", [ "h0" ] ],
+    [ "lcd1:VCC", "uno:5V", "red", [ "h0" ] ],
+    [ "lcd1:SCL", "uno:A5", "green", [ "h0" ] ],
+    [ "lcd1:SDA", "uno:A4", "green", [ "h0" ] ],
+    [ "dht1:VCC", "bb1:9t.c", "", [ "$bb" ] ],
+    [ "dht1:SDA", "bb1:10t.c", "", [ "$bb" ] ],
+    [ "dht1:NC", "bb1:11t.c", "", [ "$bb" ] ],
+    [ "dht1:GND", "bb1:12t.c", "", [ "$bb" ] ]
+  ],
+  "dependencies": {}
+}
