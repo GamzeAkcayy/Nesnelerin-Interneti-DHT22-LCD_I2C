@@ -10,7 +10,9 @@ LiquidCrystal_I2C lcd(0x27,16,2);
 void setup() {
   Serial.begin(9600);
   dht.begin();
-  lcd.begin(16,2);  
+  lcd.begin(16,2);
+  lcd.init();
+  lcd.backlight();
 }
 
 void loop() {
@@ -23,8 +25,6 @@ void loop() {
   Serial.print(humidity);
   Serial.println(" ");
 
-  lcd.init();
-  lcd.backlight();
   lcd.setCursor(2,0);
   lcd.print(F("TEMPERATURE"));
   lcd.setCursor(2,1);
