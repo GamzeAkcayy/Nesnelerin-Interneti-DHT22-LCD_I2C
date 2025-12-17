@@ -1,4 +1,4 @@
-# Arduino DHT22 & LCD Sensor Interface (Wokwi Simulation)
+# Arduino DHT22 & LCD Sensör Interface (Wokwi Simülasyonu)
 
 Bu proje, Arduino tabanlı bir sıcaklık ve nem izleme sisteminin simülasyon prototipidir. DHT22 sensöründen alınan analog verileri işleyerek, I2C protokolü üzerinden 16x2 LCD ekranda görselleştirir.
 
